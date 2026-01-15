@@ -6,14 +6,18 @@ useSeoMeta({
 definePageMeta({
   layout: "dashboard",
 });
-const changeLayout = () => {
-  setPageLayout("default");
-};
+const chips = [
+  {nama: 'Label'},
+  {nama: 'Tags', icon: 'mdi-label'},
+  {nama: 'Farrel Lerri', icon: 'mdi-account'},
+  {nama: 'Game Baru', icon: 'mdi-controller'},
+]
 </script>
 <template>
   <div>
-    <h1>Ini Halaman Index</h1>
-    <h3>TRANSFORMERS</h3>
-    <button @click="changeLayout">Change Layout</button>
+    <h1 style="margin-bottom: 12px;">Ini Halaman Index</h1>
+      <div class="text-center">
+        <v-chip v-for="chp in chips" class="ma-2" :prepend-icon="chp.icon" closable label> {{ chp.nama }} </v-chip>
+      </div>
   </div>
 </template>
