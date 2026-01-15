@@ -17,7 +17,7 @@ const chips = [
   <div>
     <h1 style="margin-bottom: 12px;">Ini Halaman Index</h1>
       <div class="text-center">
-        <v-chip v-for="chp in chips" class="ma-2" :prepend-icon="chp.icon" closable label> {{ chp.nama }} </v-chip>
+        <v-chip v-for="chp in chips" class="ma-2" color="primary" :prepend-icon="chp.icon" closable label> {{ chp.nama }} </v-chip>
       </div>
   </div>
 </template>
