@@ -3,9 +3,6 @@ useSeoMeta({
   title: "Home Page",
   description: "Ini adalah homepage",
 });
-definePageMeta({
-  layout: "dashboard",
-});
 const dialog = ref("");
 const chips = [
   { nama: "Label" },

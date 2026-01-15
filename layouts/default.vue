@@ -25,8 +25,7 @@ header {
               :key="nav.nama"
               cols="3"
             >
-              <v-btn variant="outlined" :prepend-icon="nav.icon" :to="nav.link">
-                {{ nav.nama }}
+              <v-btn variant="outlined" :prepend-icon="nav.icon" :to="nav.link" :text="nav.nama">
               </v-btn>
             </v-col>
           </v-row>
