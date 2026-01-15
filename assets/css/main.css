@@ -2,3 +2,7 @@
     font-family: 'Transformer';
     src: url('/fonts/transformer-font.ttf') format('truetype');
 }
+
+header {
+    font-family: 'Transformer';
+}

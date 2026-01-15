@@ -8,19 +8,19 @@ const cards = [
   {
     title: "Instagram",
     href: "https://instagram.com/farrelzkrs",
-    flex: 6,
+    flex: 4,
     icon: "mdi-instagram",
   },
   {
     title: "WhatsApp",
     href: "https://wa.me/6285746007677",
-    flex: 6,
+    flex: 4,
     icon: "mdi-whatsapp",
   },
   {
     title: "Instagram",
     href: "https://github.com/farrelzkrs",
-    flex: 6,
+    flex: 4,
     icon: "mdi-github",
   },
 ];
