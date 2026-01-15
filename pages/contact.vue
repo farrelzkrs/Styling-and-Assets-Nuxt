@@ -18,7 +18,7 @@ const cards = [
     icon: "mdi-whatsapp",
   },
   {
-    title: "Instagram",
+    title: "Github",
     href: "https://github.com/farrelzkrs",
     flex: 4,
     icon: "mdi-github",
