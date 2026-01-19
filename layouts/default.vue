@@ -159,24 +159,26 @@ const toggleNavbarStyle = () => {
             />
           </div>
         </v-app-bar>
-      </header>
-      <v-main>
-        <slot />
-        <v-btn
-          class="fab-toggle"
-          color="yellow"
-          icon
-          elevation="8"
-          @click="toggleBottomNav"
-        >
-          <v-icon>{{ active ? "mdi-minus" : "mdi-plus" }}</v-icon>
-        </v-btn>
-        <v-bottom-navigation v-if="active" color="primary" class="custom-bottom-nav" app>
+        <v-bottom-navigation v-if="active" color="primary" app>
           <v-btn to="/" icon="mdi-home" />
           <v-btn to="/esdoger" icon="mdi-cup" />
           <v-btn to="/about" icon="mdi-information-outline" />
           <v-btn to="/contact" icon="mdi-contacts" />
         </v-bottom-navigation>
+      </header>
+      <v-main>
+        <slot />
+        <v-fab
+          color="yellow"
+          transition="fade"
+          absolute
+          location="right center"
+          icon
+          style="right: 20px"
+          @click="toggleBottomNav"
+        >
+          <v-icon>{{ active ? "mdi-minus" : "mdi-plus" }}</v-icon>
+        </v-fab>
         <footer style="text-align: center; margin-top: 20px">&copy; Farrel 2023</footer>
       </v-main>
     </v-app>
