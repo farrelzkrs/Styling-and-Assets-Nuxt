@@ -170,16 +170,19 @@ const toggleNavbarStyle = () => {
         <slot />
         <v-fab
           color="yellow"
-          transition="fade"
           absolute
-          location="right center"
+          location="left center"
+          left="20px"
           icon
-          style="right: 20px"
           @click="toggleBottomNav"
         >
           <v-icon>{{ active ? "mdi-minus" : "mdi-plus" }}</v-icon>
         </v-fab>
-        <footer style="text-align: center; margin-top: 20px">&copy; Farrel 2023</footer>
+        <v-footer>
+          <div class="py-2 px-4 bg-surface-variant text-center w-100 rounded-pill">
+            {{ new Date().getFullYear() }} - <b>Farrel Zikri</b>
+          </div>
+        </v-footer>
       </v-main>
     </v-app>
   </div>
