@@ -11,15 +11,26 @@ const chips = [
   { nama: "Game Baru", icon: "mdi-controller" },
 ];
 const dialogg = [
-  { val: "Surabaya", nama: "surabaya" },
-  { val: "Jakarta", nama: "jakarta" },
-  { val: "Sidoarjo", nama: "sidoarjo" },
-  { val: "Gresik", nama: "gresik" },
-  { val: "Malang", nama: "malang" },
-  { val: "Cirebon", nama: "cirebon" },
-  { val: "Demak", nama: "demak" },
-  { val: "Semarang", nama: "semarang" },
-  { val: "Bandung", nama: "bandung" },
+  { type: "subheader", title: "DKI Jakarta" },
+  { title: "Jakarta", nama: "jakarta", value: 1 },
+  { type: "divider" },
+  { type: "subheader", title: "Jawa Timur" },
+  { title: "Surabaya", nama: "surabaya", value: 2 },
+  { title: "Sidoarjo", nama: "sidoarjo", value: 3 },
+  { title: "Malang", nama: "malang", value: 4 },
+  { title: "Gresik", nama: "gresik", value: 5 },
+  { type: "divider" },
+  { type: "subheader", title: "Jawa Tengah" },
+  { title: "Surakarta", nama: "surakarta", value: 6 },
+  { title: "Kudus", nama: "kudus", value: 7 },
+  { title: "Semarang", nama: "semarang", value: 8 },
+  { title: "Demak", nama: "demak", value: 9 },
+  { type: "divider" },
+  { type: "subheader", title: "Jawa Barat" },
+  { title: "Bogor", nama: "bogor", value: 10 },
+  { title: "Bekasi", nama: "bekasi", value: 11 },
+  { title: "Cirebon", nama: "cirebon", value: 12 },
+  { title: "Bandung", nama: "bandung", value: 13 },
 ];
 </script>
 <template>
@@ -58,18 +69,44 @@ const dialogg = [
                 class="w-100"
                 messages="Pilih daerah tempat tinggalmu"
               >
-                <v-btn color="primary" variant="text" :key="dlg.nama" :value="dlg.nama" block>
-                  {{ dlg.val }}
+                <v-btn
+                  color="primary"
+                  variant="text"
+                  :key="dlg.nama"
+                  :titleue="dlg.nama"
+                  block
+                >
+                  {{ dlg.title }}
                 </v-btn>
               </v-btn-group>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-actions>
-              <v-btn class="mx-auto w-100" text="Tutup" @click="isActive.value = false" block></v-btn>
+              <v-btn
+                class="mx-auto w-100"
+                text="Tutup"
+                @click="isActive.value = false"
+                block
+              ></v-btn>
             </v-card-actions>
           </v-card>
         </template>
       </v-dialog>
     </div>
+    <v-card>
+      <v-list>
+        <v-list-item v-for="(itam, i) in dialogg" :key="i" :value="itam" color="success">
+          <v-list-item-title v-if="itam.type === 'subheader'" class="fs-3 text-center">{{
+            itam.title
+          }}</v-list-item-title>
+          <v-list-item-subtitle v-else-if="itam.type === 'divider'"
+            ><v-divider></v-divider
+          ></v-list-item-subtitle>
+          <v-list-item-subtitle v-else
+            >{{ itam.value }}. {{ itam.title }}</v-list-item-subtitle
+          >
+        </v-list-item>
+      </v-list>
+    </v-card>
   </div>
 </template>
